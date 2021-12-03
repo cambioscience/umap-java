@@ -51,5 +51,26 @@
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>com.allogy.maven.wagon</groupId>
+        <artifactId>maven-s3-wagon</artifactId>
+        <version>1.2.0</version>
+      </extension>
+    </extensions>
   </build>
+  <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>release</id>
+      <name>AWS Release Repository</name>
+      <url>s3://repo.obrizum.io/release</url>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>snapshot</id>
+      <name>AWS Snapshot Repository</name>
+      <url>s3://repo.obrizum.io/snapshot</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
